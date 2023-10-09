@@ -33,7 +33,7 @@ df = df[df['job']==job_filter]
 
 # near real-time / live feed simulation 
 
-for seconds in range(2):
+for seconds in range(100):
 #while True: 
     
     df['age_new'] = df['age'] * np.random.choice(range(1,5))
@@ -59,11 +59,11 @@ for seconds in range(2):
 
         fig_col1, fig_col2 = st.columns(2)
         with fig_col1:
-            st.markdown("### First Chart")
+            st.markdown("### First Chart!")
             fig = px.density_heatmap(data_frame=df, y = 'age_new', x = 'marital')
             st.write(fig)
         with fig_col2:
-            st.markdown("### Second Chart")
+            st.markdown("### Second Chart!")
             fig2 = px.histogram(data_frame = df, x = 'age_new')
             st.write(fig2)
         st.markdown("### Detailed Data View")
